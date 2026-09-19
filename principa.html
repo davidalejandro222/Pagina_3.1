@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcraft - Café & Postres Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<body>
+
+    <!-- Encabezado Superior -->
+    <header class="top-header">
+        <!-- Botón Hamburguesa (solo visible en pantallas pequeñas) -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="logo-container">
+            <span class="brand-name">Cupcraft</span>
+            <img src="logoo-removebg-preview.png" alt="Cupcraft Logo" class="logo-img">
+        </div>
+    </header>
+
+    <!-- Overlay oscuro para cerrar menú móvil al tocar fuera -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Barra de Navegación Lateral -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#productos">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#cafes">☕ Cafés</a></li>
+                        <li><a href="#postres">🍰 Postres</a></li>
+                    </ul>
+                </li>
+                <li><a href="#promos">Promociones</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#informacion">Información General</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#faq">Preguntas Frecuentes</a></li>
+                <li><a href="#resenas">Reseñas</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- Portada Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Sabor Único & Momentos Dulces</h1>
+                <p>Descubre el mejor café artesanal acompañado de la repostería más fina.</p>
+                <a href="#productos" class="btn">Ver Menú</a>
+            </div>
+        </section>
+
+        <!-- Sección Productos -->
+        <section id="productos" class="section">
+            <h2 class="title">Nuestros Productos</h2>
+            
+            <!-- Cafés (10 Opciones) -->
+            <h3 id="cafes" class="subtitle">Cafés Especiales</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80" alt="Espresso">
+                    <h3>Espresso Double</h3>
+                    <p>Intenso, cuerpo completo y notas a chocolate amargo.</p>
+                    <span class="price">$3.50</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" alt="Cappuccino">
+                    <h3>Cappuccino Vainilla</h3>
+                    <p>Espresso suave con leche cremosa y aroma a vainilla pura.</p>
+                    <span class="price">$4.25</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" alt="Latte Caramel">
+                    <h3>Caramel Macchiato</h3>
+                    <p>Mezcla perfecta de espresso, leche al vapor y caramelo artesanal.</p>
+                    <span class="price">$4.50</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="Café Americano">
+                    <h3>Café Americano</h3>
+                    <p>Granos de origen único seleccionados con un tostado medio.</p>
+                    <span class="price">$3.00</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" alt="Mocha Blanco">
+                    <h3>Mocha de Chocolate Blanco</h3>
+                    <p>Espresso combinado con chocolate blanco cremoso y crema batida.</p>
+                    <span class="price">$4.75</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" alt="Flat White">
+                    <h3>Flat White</h3>
+                    <p>Doble shot de espresso con una fina capa de microespuma de leche.</p>
+                    <span class="price">$4.00</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" alt="Cold Brew">
+                    <h3>Cold Brew Reserva</h3>
+                    <p>Café infusionado en frío durante 18 horas, suave y refrescante.</p>
+                    <span class="price">$4.50</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80" alt="Affogato">
+                    <h3>Affogato Supremo</h3>
+                    <p>Una bola de helado de vainilla ahogada en espresso caliente.</p>
+                    <span class="price">$4.80</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" alt="Irish Coffee">
+                    <h3>Irish Coffee Especial</h3>
+                    <p>Café caliente con un toque de jarabe de whisky sin alcohol y crema.</p>
+                    <span class="price">$5.25</span>
+                </div>
+                
+            </div>
+
+            <!-- Postres (10 Opciones) -->
+            <h3 id="postres" class="subtitle">Postres Artesanales</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="Pastel Velvet">
+                    <h3>Pastel Chocolate Velvet</h3>
+                    <p>Suave bizcocho de chocolate con capas de crema ganache.</p>
+                    <span class="price">$5.00</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80" alt="Cheesecake">
+                    <h3>Cheesecake Frutos Rojos</h3>
+                    <p>Cremoso cheesecake tradicional con mermelada artesanal.</p>
+                    <span class="price">$4.75</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Croissant">
+                    <h3>Croissant de Almendras</h3>
+                    <p>Hojaldre crujiente relleno de crema de almendras tostadas.</p>
+                    <span class="price">$3.80</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80" alt="Tiramisú">
+                    <h3>Tiramisú Italiano</h3>
+                    <p>Clásico postre italiano impregnado en espresso y cacao.</p>
+                    <span class="price">$5.50</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" alt="Donas">
+                    <h3>Donas Glaseadas Especiales</h3>
+                    <p>Donas esponjosas con glaseado casero de vainilla o chocolate.</p>
+                    <span class="price">$2.50</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=500&q=80" alt="Cupcakes">
+                    <h3>Cupcake Red Velvet</h3>
+                    <p>Bizcocho de terciopelo rojo cubierto con betún de queso crema.</p>
+                    <span class="price">$3.25</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" alt="Brownie">
+                    <h3>Brownie con Nuez</h3>
+                    <p>Mordería densa de chocolate con trozos de nuez pecana.</p>
+                    <span class="price">$3.50</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=500&q=80" alt="Tartaleta">
+                    <h3>Tartaleta de Limón</h3>
+                    <p>Masa quebrada rellena de crema de limón y merengue tostado.</p>
+                    <span class="price">$4.20</span>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=500&q=80" alt="Macarons">
+                    <h3>Macarons Franceses (3 uds)</h3>
+                    <p>Galletas tradicionales de almendra con rellenos variados.</p>
+                    <span class="price">$4.50</span>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Nueva Sección 1: Promociones y Combos -->
+        <section id="promos" class="section dark-bg">
+            <h2 class="title">Combos & Promociones del Mes</h2>
+            <div class="grid-cards">
+                <div class="card promo-card">
+                    <span class="badge">Ahorra 15%</span>
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" alt="Combo Mañanero">
+                    <h3>Combo Mañanero</h3>
+                    <p>Café Americano o Latte grande + Croissant de Almendras.</p>
+                    <span class="price">$5.99</span>
+                </div>
+                <div class="card promo-card">
+                    <span class="badge">Popular</span>
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="Tarde Dulce">
+                    <h3>Tarde Dulce para Dos</h3>
+                    <p>2 Cappuccinos Vainilla + 2 Rebanadas de Pastel Velvet.</p>
+                    <span class="price">$14.50</span>
+                </div>
+                <div class="card promo-card">
+                    <span class="badge">Especial</span>
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80" alt="Experiencia Cupcraft">
+                    <h3>Experiencia Cupcraft</h3>
+                    <p>1 Cold Brew Reserva + Tiramisú Italiano + 1 Macaron.</p>
+                    <span class="price">$10.00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Horarios -->
+        <section id="horarios" class="section">
+            <h2 class="title">Nuestros Horarios</h2>
+            <div class="horarios-container">
+                <div class="horario-box">
+                    <h3>Lunes a Viernes</h3>
+                    <p>7:00 AM - 9:00 PM</p>
+                </div>
+                <div class="horario-box">
+                    <h3>Sábados y Domingos</h3>
+                    <p>8:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Información General -->
+        <section id="informacion" class="section dark-bg">
+            <h2 class="title">Información General</h2>
+            <div class="info-content">
+                <div class="info-card">
+                    <h3>📍 Ubicación</h3>
+                    <p>Calle Principal, Av. Del Café #123</p>
+                </div>
+                <div class="info-card">
+                    <h3>📞 Contacto & Pedidos</h3>
+                    <p>+503 1234-5678 / contacto@cupcraft.com</p>
+                </div>
+                <div class="info-card">
+                    <h3>☕ Nuestra Filosofía</h3>
+                    <p>Trabajamos únicamente con granos de café 100% de origen local y técnicas de tostado artesanal.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Galería -->
+        <section id="galeria" class="section">
+            <h2 class="title">Nuestra Experiencia en Imágenes</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80" alt="Café y bar">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Grano de café">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Barista">
+              
+            </div>
+        </section>
+
+        <!-- Nueva Sección 2: Preguntas Frecuentes (FAQ) -->
+        <section id="faq" class="section dark-bg">
+            <h2 class="title">Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Tienen opciones de leches vegetales?</h3>
+                    <p>¡Sí! Contamos con leche de almendra, soya, avena y coco.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Hacen envíos a domicilio?</h3>
+                    <p>Realizamos envíos dentro de la ciudad a través de nuestro WhatsApp o mediante plataformas asociadas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Tienen opciones de postres sin azúcar o veganos?</h3>
+                    <p>Contamos con opciones keto, sin gluten y alternativas veganas preparadas diariamente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Reseñas -->
+        <section id="resenas" class="section">
+            <h2 class="title">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="grid-cards">
+                <div class="card testimonial">
+                    <p>"El mejor cappuccino de la ciudad y el cheesecake es de otro mundo."</p>
+                    <h4>- Sofía M.</h4>
+                </div>
+                <div class="card testimonial">
+                    <p>"Un lugar perfecto para trabajar o reunirse con amigos. Ambiente e iluminación increíble."</p>
+                    <h4>- Carlos R.</h4>
+                </div>
+                <div class="card testimonial">
+                    <p>"Con estos postres me siento como una deidad."</p>
+                    <h4>- Dexter M.</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de Página -->
+        <footer>
+            <p>Derechos reservados - Isaac Vasquez & David Lara</p>
+        </footer>
+
+    </main>
+
+    <!-- Script simple para abrir y cerrar la barra hamburguesa en móvil/tablet -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const navLinks = document.querySelectorAll('.sidebar a');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburgerBtn.classList.toggle('open');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Cierra el menú al hacer clic en cualquier enlace
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (sidebar.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
