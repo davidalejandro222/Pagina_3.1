@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupcraft - Café & Postres Premium</title>
+    <title>Contacto | Cupcraft</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/1.css">
 </head>
@@ -37,7 +37,7 @@
     <aside class="sidebar" id="sidebar">
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">🏠 Inicio</a></li>
+                <li><a href="index.html">🏠 Inicio</a></li>
                 <li class="dropdown">
                     <a href="productos.html">Productos ▾</a>
                     <ul class="submenu">
@@ -59,13 +59,24 @@
 
     <main class="main-content">
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Sabor Único & Momentos Dulces</h1>
-                <p>Descubre el mejor café artesanal acompañado de la repostería más fina.</p>
-                <div class="hero-buttons">
-                    <a href="productos.html" class="btn">Ver Menú</a>
-                    <a href="contacto.html" class="btn outline">Contáctanos</a>
+        <section id="contacto" class="page-section section">
+            <h2 class="title">Contáctanos</h2>
+            <div class="contact-wrap">
+                <div class="contact-info">
+                    <h3>Estamos para ayudarte</h3>
+                    <p>📍 Calle Principal, Av. Del Café #123</p>
+                    <p>📞 <a href="tel:+50312345678">+503 1234-5678</a></p>
+                    <p>💬 <a href="https://wa.me/50312345678" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>
+                    <p>✉️ <a href="mailto:contacto@cupcraft.com">contacto@cupcraft.com</a></p>
+                    <p>🕒 Lun-Vie 7:00 AM - 9:00 PM · Sáb-Dom 8:00 AM - 10:00 PM</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Envíanos un mensaje</h3>
+                    <input type="text" id="c-name" placeholder="Tu nombre">
+                    <input type="email" id="c-email" placeholder="Tu correo (opcional)">
+                    <textarea id="c-msg" placeholder="¿En qué podemos ayudarte?"></textarea>
+                    <button class="btn" id="c-send">Enviar por WhatsApp</button>
+                    <p class="form-msg" id="c-feedback"></p>
                 </div>
             </div>
         </section>

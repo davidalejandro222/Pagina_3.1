@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Cupcraft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<body>
+
+    <!-- Encabezado Superior -->
+    <header class="top-header">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Acciones rápidas: contacto y carrito siempre visibles -->
+        <div class="header-actions">
+            <a href="contacto.html" class="header-btn outline">📞 <span class="label">Contacto</span></a>
+            <button class="header-btn" id="cart-open" aria-label="Abrir carrito">
+                🛒 <span class="label">Mi pedido</span> <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+
+        <a href="index.html" class="logo-container" aria-label="Ir al inicio">
+            <span class="brand-name">Cupcraft</span>
+            <img src="logoo-removebg-preview.png" alt="Cupcraft Logo" class="logo-img">
+        </a>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Barra de Navegación Lateral -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li class="dropdown">
+                    <a href="productos.html" class="active">Productos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="productos.html#cafes">☕ Cafés</a></li>
+                        <li><a href="productos.html#postres">🍰 Postres</a></li>
+                    </ul>
+                </li>
+                <li><a href="promos.html">Promociones</a></li>
+                <li><a href="local.html">Nuestro Local</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
+                <li><a href="informacion.html">Información General</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                <li><a href="resenas.html">Reseñas</a></li>
+                <li><a href="contacto.html" class="nav-contact">📞 Contáctanos</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="productos" class="page-section section">
+            <h2 class="title">Nuestros Productos</h2>
+
+            <!-- Cafés -->
+            <h3 id="cafes" class="subtitle">Cafés Especiales</h3>
+            <div class="grid-cards">
+                <div class="card" data-name="Espresso Double" data-price="3.50">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80" alt="Espresso">
+                    <h3>Espresso Double</h3>
+                    <p>Intenso, cuerpo completo y notas a chocolate amargo.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> doble shot de espresso, agua caliente. <br><strong>Tipo:</strong> grano arábica, tostado oscuro.</div>
+                    <span class="price">$3.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Cappuccino Vainilla" data-price="4.25">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" alt="Cappuccino">
+                    <h3>Cappuccino Vainilla</h3>
+                    <p>Espresso suave con leche cremosa y aroma a vainilla pura.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> espresso, leche, espuma, extracto de vainilla. <br><strong>Tipo:</strong> grano arábica, tostado medio.</div>
+                    <div class="options"><label>Tipo de leche</label>
+                        <select class="milk"><option>Entera</option><option>Almendra</option><option>Soya</option><option>Avena</option><option>Coco</option></select></div>
+                    <span class="price">$4.25</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Caramel Macchiato" data-price="4.50">
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" alt="Latte Caramel">
+                    <h3>Caramel Macchiato</h3>
+                    <p>Mezcla perfecta de espresso, leche al vapor y caramelo artesanal.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> espresso, leche al vapor, jarabe y caramelo artesanal. <br><strong>Tipo:</strong> grano arábica, tostado medio.</div>
+                    <div class="options"><label>Tipo de leche</label>
+                        <select class="milk"><option>Entera</option><option>Almendra</option><option>Soya</option><option>Avena</option><option>Coco</option></select></div>
+                    <span class="price">$4.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Café Americano" data-price="3.00">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="Café Americano">
+                    <h3>Café Americano</h3>
+                    <p>Granos de origen único seleccionados con un tostado medio.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> espresso y agua caliente. <br><strong>Tipo:</strong> origen único, tostado medio.</div>
+                    <span class="price">$3.00</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Mocha de Chocolate Blanco" data-price="4.75">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" alt="Mocha Blanco">
+                    <h3>Mocha de Chocolate Blanco</h3>
+                    <p>Espresso combinado con chocolate blanco cremoso y crema batida.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> espresso, chocolate blanco, leche, crema batida. <br><strong>Tipo:</strong> grano arábica, tostado medio.</div>
+                    <div class="options"><label>Tipo de leche</label>
+                        <select class="milk"><option>Entera</option><option>Almendra</option><option>Soya</option><option>Avena</option><option>Coco</option></select></div>
+                    <span class="price">$4.75</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Flat White" data-price="4.00">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" alt="Flat White">
+                    <h3>Flat White</h3>
+                    <p>Doble shot de espresso con una fina capa de microespuma de leche.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> doble espresso y microespuma de leche. <br><strong>Tipo:</strong> grano arábica, tostado medio.</div>
+                    <div class="options"><label>Tipo de leche</label>
+                        <select class="milk"><option>Entera</option><option>Almendra</option><option>Soya</option><option>Avena</option><option>Coco</option></select></div>
+                    <span class="price">$4.00</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Cold Brew Reserva" data-price="4.50">
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" alt="Cold Brew">
+                    <h3>Cold Brew Reserva</h3>
+                    <p>Café infusionado en frío durante 18 horas, suave y refrescante.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> café molido grueso, agua filtrada, hielo. <br><strong>Tipo:</strong> grano de origen local, infusión en frío.</div>
+                    <span class="price">$4.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Affogato Supremo" data-price="4.80">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80" alt="Affogato">
+                    <h3>Affogato Supremo</h3>
+                    <p>Una bola de helado de vainilla ahogada en espresso caliente.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> helado de vainilla y espresso caliente. <br><strong>Tipo:</strong> grano arábica, tostado oscuro.</div>
+                    <span class="price">$4.80</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Irish Coffee Especial" data-price="5.25">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" alt="Irish Coffee">
+                    <h3>Irish Coffee Especial</h3>
+                    <p>Café caliente con un toque de jarabe de whisky sin alcohol y crema.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> café filtrado, jarabe sabor whisky (sin alcohol), crema, azúcar morena. <br><strong>Tipo:</strong> tostado medio.</div>
+                    <span class="price">$5.25</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+            </div>
+
+            <!-- Postres -->
+            <h3 id="postres" class="subtitle">Postres Artesanales</h3>
+            <div class="grid-cards">
+                <div class="card" data-name="Pastel Chocolate Velvet" data-price="5.00">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="Pastel Velvet">
+                    <h3>Pastel Chocolate Velvet</h3>
+                    <p>Suave bizcocho de chocolate con capas de crema ganache.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> harina, cacao, huevo, mantequilla, ganache de chocolate.</div>
+                    <span class="price">$5.00</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Cheesecake Frutos Rojos" data-price="4.75">
+                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80" alt="Cheesecake">
+                    <h3>Cheesecake Frutos Rojos</h3>
+                    <p>Cremoso cheesecake tradicional con mermelada artesanal.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> queso crema, galleta, mantequilla, mermelada de frutos rojos.</div>
+                    <span class="price">$4.75</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Croissant de Almendras" data-price="3.80">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Croissant">
+                    <h3>Croissant de Almendras</h3>
+                    <p>Hojaldre crujiente relleno de crema de almendras tostadas.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> masa de hojaldre, mantequilla, crema y láminas de almendra.</div>
+                    <span class="price">$3.80</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Tiramisú Italiano" data-price="5.50">
+                    <img src="tiramisu.png" alt="Tiramisú">
+                    <h3>Tiramisú Italiano</h3>
+                    <p>Clásico postre italiano impregnado en espresso y cacao.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> mascarpone, bizcocho, espresso, cacao en polvo.</div>
+                    <span class="price">$5.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Donas Glaseadas Especiales" data-price="2.50">
+                    <img src="image.png" alt="Donas">
+                    <h3>Donas Glaseadas Especiales</h3>
+                    <p>Donas esponjosas con glaseado casero de vainilla o chocolate.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> masa frita, glaseado casero.</div>
+                    <div class="options"><label>Glaseado</label>
+                        <select class="milk"><option>Vainilla</option><option>Chocolate</option></select></div>
+                    <span class="price">$2.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Cupcake Red Velvet" data-price="3.25">
+                    <img src="cupcake.png" alt="Cupcakes">
+                    <h3>Cupcake Red Velvet</h3>
+                    <p>Bizcocho de terciopelo rojo cubierto con betún de queso crema.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> bizcocho red velvet, cacao, betún de queso crema.</div>
+                    <span class="price">$3.25</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Brownie con Nuez" data-price="3.50">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" alt="Brownie">
+                    <h3>Brownie con Nuez</h3>
+                    <p>Mordería densa de chocolate con trozos de nuez pecana.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> chocolate, mantequilla, huevo, nuez pecana. <br><em>Contiene frutos secos.</em></div>
+                    <span class="price">$3.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Tartaleta de Limón" data-price="4.20">
+                    <img src="Tarta.png" alt="Tartaleta">
+                    <h3>Tartaleta de Limón</h3>
+                    <p>Masa quebrada rellena de crema de limón y merengue tostado.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> masa quebrada, crema de limón, merengue.</div>
+                    <span class="price">$4.20</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card" data-name="Macarons Franceses (3 uds)" data-price="4.50">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=500&q=80" alt="Macarons">
+                    <h3>Macarons Franceses (3 uds)</h3>
+                    <p>Galletas tradicionales de almendra con rellenos variados.</p>
+                    <div class="ingredients"><strong>Ingredientes:</strong> harina de almendra, clara de huevo, relleno de ganache. <br><em>Contiene frutos secos.</em></div>
+                    <span class="price">$4.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de Página -->
+        <footer>
+            <p>Derechos reservados - Isaac Vasquez & David Lara</p>
+        </footer>
+
+    </main>
+
+    <!-- Carrito -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-panel" id="cart-panel" aria-label="Carrito de pedido">
+        <div class="cart-head">
+            <h3>🛒 Mi pedido</h3>
+            <button class="cart-close" id="cart-close" aria-label="Cerrar">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-foot">
+            <div class="cart-total"><span>Total</span><span id="cart-total">$0.00</span></div>
+            <button class="btn" id="checkout-btn">Enviar pedido por WhatsApp</button>
+            <button class="clear" id="clear-btn">Vaciar pedido</button>
+        </div>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

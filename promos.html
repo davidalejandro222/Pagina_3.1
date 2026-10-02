@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupcraft - Café & Postres Premium</title>
+    <title>Promociones | Cupcraft</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/1.css">
 </head>
@@ -37,7 +37,7 @@
     <aside class="sidebar" id="sidebar">
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">🏠 Inicio</a></li>
+                <li><a href="index.html">🏠 Inicio</a></li>
                 <li class="dropdown">
                     <a href="productos.html">Productos ▾</a>
                     <ul class="submenu">
@@ -45,7 +45,7 @@
                         <li><a href="productos.html#postres">🍰 Postres</a></li>
                     </ul>
                 </li>
-                <li><a href="promos.html">Promociones</a></li>
+                <li><a href="promos.html" class="active">Promociones</a></li>
                 <li><a href="local.html">Nuestro Local</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
                 <li><a href="informacion.html">Información General</a></li>
@@ -59,13 +59,32 @@
 
     <main class="main-content">
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Sabor Único & Momentos Dulces</h1>
-                <p>Descubre el mejor café artesanal acompañado de la repostería más fina.</p>
-                <div class="hero-buttons">
-                    <a href="productos.html" class="btn">Ver Menú</a>
-                    <a href="contacto.html" class="btn outline">Contáctanos</a>
+        <section id="promos" class="page-section section dark-bg">
+            <h2 class="title">Combos & Promociones del Mes</h2>
+            <div class="grid-cards">
+                <div class="card promo-card" data-name="Combo Mañanero" data-price="5.99">
+                    <span class="badge">Ahorra 15%</span>
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=500&q=80" alt="Combo Mañanero">
+                    <h3>Combo Mañanero</h3>
+                    <p>Café Americano o Latte grande + Croissant de Almendras.</p>
+                    <span class="price">$5.99</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card promo-card" data-name="Tarde Dulce para Dos" data-price="14.50">
+                    <span class="badge">Popular</span>
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="Tarde Dulce">
+                    <h3>Tarde Dulce para Dos</h3>
+                    <p>2 Cappuccinos Vainilla + 2 Rebanadas de Pastel Velvet.</p>
+                    <span class="price">$14.50</span>
+                    <button class="add-btn">Agregar al pedido</button>
+                </div>
+                <div class="card promo-card" data-name="Experiencia Cupcraft" data-price="10.00">
+                    <span class="badge">Especial</span>
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=500&q=80" alt="Experiencia Cupcraft">
+                    <h3>Experiencia Cupcraft</h3>
+                    <p>1 Cold Brew Reserva + Tiramisú Italiano + 1 Macaron.</p>
+                    <span class="price">$10.00</span>
+                    <button class="add-btn">Agregar al pedido</button>
                 </div>
             </div>
         </section>

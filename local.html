@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupcraft - Café & Postres Premium</title>
+    <title>Nuestro Local | Cupcraft</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/1.css">
 </head>
@@ -37,7 +37,7 @@
     <aside class="sidebar" id="sidebar">
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">🏠 Inicio</a></li>
+                <li><a href="index.html">🏠 Inicio</a></li>
                 <li class="dropdown">
                     <a href="productos.html">Productos ▾</a>
                     <ul class="submenu">
@@ -46,7 +46,7 @@
                     </ul>
                 </li>
                 <li><a href="promos.html">Promociones</a></li>
-                <li><a href="local.html">Nuestro Local</a></li>
+                <li><a href="local.html" class="active">Nuestro Local</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
                 <li><a href="informacion.html">Información General</a></li>
                 <li><a href="galeria.html">Galería</a></li>
@@ -59,14 +59,18 @@
 
     <main class="main-content">
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Sabor Único & Momentos Dulces</h1>
-                <p>Descubre el mejor café artesanal acompañado de la repostería más fina.</p>
-                <div class="hero-buttons">
-                    <a href="productos.html" class="btn">Ver Menú</a>
-                    <a href="contacto.html" class="btn outline">Contáctanos</a>
+        <section id="local" class="page-section section">
+            <h2 class="title">Conoce Nuestro Local</h2>
+            <div class="carousel" id="carousel">
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" alt="Interior de la cafetería"><span>Un ambiente cálido para trabajar o compartir</span></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=80" alt="Barra de café"><span>Nuestra barra de café artesanal</span></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" alt="Mesas del local"><span>Mesas cómodas para toda ocasión</span></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1000&q=80" alt="Fachada y terraza"><span>Terraza y zona al aire libre</span></div>
                 </div>
+                <button class="carousel-btn prev" id="car-prev" aria-label="Anterior">❮</button>
+                <button class="carousel-btn next" id="car-next" aria-label="Siguiente">❯</button>
+                <div class="carousel-dots" id="car-dots"></div>
             </div>
         </section>
 

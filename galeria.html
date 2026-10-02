@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupcraft - Café & Postres Premium</title>
+    <title>Galería | Cupcraft</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/1.css">
 </head>
@@ -37,7 +37,7 @@
     <aside class="sidebar" id="sidebar">
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">🏠 Inicio</a></li>
+                <li><a href="index.html">🏠 Inicio</a></li>
                 <li class="dropdown">
                     <a href="productos.html">Productos ▾</a>
                     <ul class="submenu">
@@ -49,7 +49,7 @@
                 <li><a href="local.html">Nuestro Local</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
                 <li><a href="informacion.html">Información General</a></li>
-                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="galeria.html" class="active">Galería</a></li>
                 <li><a href="faq.html">Preguntas Frecuentes</a></li>
                 <li><a href="resenas.html">Reseñas</a></li>
                 <li><a href="contacto.html" class="nav-contact">📞 Contáctanos</a></li>
@@ -59,14 +59,17 @@
 
     <main class="main-content">
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Sabor Único & Momentos Dulces</h1>
-                <p>Descubre el mejor café artesanal acompañado de la repostería más fina.</p>
-                <div class="hero-buttons">
-                    <a href="productos.html" class="btn">Ver Menú</a>
-                    <a href="contacto.html" class="btn outline">Contáctanos</a>
-                </div>
+        <section id="galeria" class="page-section section dark-bg">
+            <h2 class="title">Nuestra Experiencia en Imágenes</h2>
+            <div class="upload-box">
+                <p>¿Nos visitaste? ¡Comparte tu foto con la comunidad Cupcraft!</p>
+                <label for="photo-input" class="btn">📷 Subir mi foto</label>
+                <input type="file" id="photo-input" accept="image/*" multiple>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80" alt="Café y bar"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Grano de café"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Barista"></div>
             </div>
         </section>
 

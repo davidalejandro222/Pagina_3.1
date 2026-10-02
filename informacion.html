@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupcraft - Café & Postres Premium</title>
+    <title>Información General | Cupcraft</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/1.css">
 </head>
@@ -37,7 +37,7 @@
     <aside class="sidebar" id="sidebar">
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">🏠 Inicio</a></li>
+                <li><a href="index.html">🏠 Inicio</a></li>
                 <li class="dropdown">
                     <a href="productos.html">Productos ▾</a>
                     <ul class="submenu">
@@ -48,7 +48,7 @@
                 <li><a href="promos.html">Promociones</a></li>
                 <li><a href="local.html">Nuestro Local</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
-                <li><a href="informacion.html">Información General</a></li>
+                <li><a href="informacion.html" class="active">Información General</a></li>
                 <li><a href="galeria.html">Galería</a></li>
                 <li><a href="faq.html">Preguntas Frecuentes</a></li>
                 <li><a href="resenas.html">Reseñas</a></li>
@@ -59,13 +59,26 @@
 
     <main class="main-content">
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Sabor Único & Momentos Dulces</h1>
-                <p>Descubre el mejor café artesanal acompañado de la repostería más fina.</p>
-                <div class="hero-buttons">
-                    <a href="productos.html" class="btn">Ver Menú</a>
-                    <a href="contacto.html" class="btn outline">Contáctanos</a>
+        <section id="informacion" class="page-section section">
+            <h2 class="title">Información General</h2>
+            <div class="info-content">
+                <div class="info-card info-map">
+                    <div class="map-text">
+                        <h3>📍 Ubicación</h3>
+                        <p>Calle Principal, Av. Del Café #123</p>
+                        <p class="map-sub">Visítanos y disfruta de tu café en un ambiente cálido.</p>
+                        <a class="btn" href="https://www.google.com/maps?q=13.6989,-89.1914" target="_blank" rel="noopener">Abrir en Google Maps</a>
+                    </div>
+                    <iframe class="map-frame" src="https://www.google.com/maps?q=13.6989,-89.1914&z=15&output=embed" title="Ubicación de Cupcraft en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                </div>
+                <div class="info-card">
+                    <h3>📞 Contacto & Pedidos</h3>
+                    <p>+503 1234-5678 / contacto@cupcraft.com</p>
+                    <p><a href="contacto.html" style="color:#f0c58a;">Ir a contacto →</a></p>
+                </div>
+                <div class="info-card">
+                    <h3>☕ Nuestra Filosofía</h3>
+                    <p>Trabajamos únicamente con granos de café 100% de origen local y técnicas de tostado artesanal.</p>
                 </div>
             </div>
         </section>
