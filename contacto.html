@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Cupcraft</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/1.css">
+    <link rel="stylesheet" href="css/1.css?v=4">
 </head>
 <body>
 
@@ -39,19 +39,30 @@
             <ul class="nav-links">
                 <li><a href="index.html">🏠 Inicio</a></li>
                 <li class="dropdown">
-                    <a href="productos.html">Productos ▾</a>
+                    <a href="#" class="dd-toggle">Menú <span class="arrow">▾</span></a>
                     <ul class="submenu">
                         <li><a href="productos.html#cafes">☕ Cafés</a></li>
                         <li><a href="productos.html#postres">🍰 Postres</a></li>
+                        <li><a href="promos.html">Promociones</a></li>
                     </ul>
                 </li>
-                <li><a href="promos.html">Promociones</a></li>
-                <li><a href="local.html">Nuestro Local</a></li>
-                <li><a href="horarios.html">Horarios</a></li>
-                <li><a href="informacion.html">Información General</a></li>
-                <li><a href="galeria.html">Galería</a></li>
-                <li><a href="faq.html">Preguntas Frecuentes</a></li>
-                <li><a href="resenas.html">Reseñas</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dd-toggle">Nosotros <span class="arrow">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="local.html">Nuestro Local</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="resenas.html">Reseñas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dd-toggle">Información <span class="arrow">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a href="informacion.html">Información General</a></li>
+                        <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    </ul>
+                </li>
+                <li><a href="pedidos.html">🚚 Pedidos y Entregas</a></li>
                 <li><a href="contacto.html" class="nav-contact">📞 Contáctanos</a></li>
             </ul>
         </nav>
@@ -64,10 +75,10 @@
             <div class="contact-wrap">
                 <div class="contact-info">
                     <h3>Estamos para ayudarte</h3>
-                    <p>📍 Calle Principal, Av. Del Café #123</p>
-                    <p>📞 <a href="tel:+50312345678">+503 1234-5678</a></p>
-                    <p>💬 <a href="https://wa.me/50312345678" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>
-                    <p>✉️ <a href="mailto:contacto@cupcraft.com">contacto@cupcraft.com</a></p>
+                    <p>📍 <span data-cc="direccion">Calle Principal, Av. Del Café #123</span></p>
+                    <p>📞 <a href="tel:+50312345678" data-cc="telefono" data-cc-href="tel">+503 1234-5678</a></p>
+                    <p>💬 <a href="https://wa.me/50312345678" data-cc-href="wa" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>
+                    <p>✉️ <a href="mailto:contacto@cupcraft.com" data-cc="correo" data-cc-href="mail">contacto@cupcraft.com</a></p>
                     <p>🕒 Lun-Vie 7:00 AM - 9:00 PM · Sáb-Dom 8:00 AM - 10:00 PM</p>
                 </div>
                 <div class="contact-form">
@@ -97,14 +108,24 @@
         </div>
         <div class="cart-items" id="cart-items"></div>
         <div class="cart-foot">
+            <div class="checkout-form" id="checkout-form">
+                <input type="text" id="co-nombre" placeholder="Nombre y apellido *" autocomplete="name">
+                <input type="tel" id="co-telefono" placeholder="Teléfono *" autocomplete="tel">
+                <input type="email" id="co-correo" placeholder="Correo (opcional)" autocomplete="email">
+                <input type="text" id="co-direccion" placeholder="Dirección de entrega *" autocomplete="street-address">
+                <select id="co-pago" aria-label="Método de pago"><option>Efectivo</option><option>Tarjeta</option><option>Transferencia</option></select>
+                <input type="text" id="co-notas" placeholder="Notas del pedido (opcional)" maxlength="120">
+            </div>
             <div class="cart-total"><span>Total</span><span id="cart-total">$0.00</span></div>
-            <button class="btn" id="checkout-btn">Enviar pedido por WhatsApp</button>
+            <button class="btn" id="checkout-btn">Confirmar pedido</button>
+            <a href="pedidos.html" class="cart-link">Ver zonas, costos de envío y pago</a>
             <button class="clear" id="clear-btn">Vaciar pedido</button>
         </div>
     </aside>
 
     <div class="toast" id="toast"></div>
 
-    <script src="js/main.js"></script>
+    <script src="js/config.js?v=4"></script>
+    <script src="js/main.js?v=4"></script>
 </body>
 </html>

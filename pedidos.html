@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos y Entregas | Cupcraft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/1.css?v=4">
+</head>
+<body>
+
+    <!-- Encabezado Superior -->
+    <header class="top-header">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Acciones rápidas: contacto y carrito siempre visibles -->
+        <div class="header-actions">
+            <a href="contacto.html" class="header-btn outline">📞 <span class="label">Contacto</span></a>
+            <button class="header-btn" id="cart-open" aria-label="Abrir carrito">
+                🛒 <span class="label">Mi pedido</span> <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+
+        <a href="index.html" class="logo-container" aria-label="Ir al inicio">
+            <span class="brand-name">Cupcraft</span>
+            <img src="logoo-removebg-preview.png" alt="Cupcraft Logo" class="logo-img">
+        </a>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Barra de Navegación Lateral -->
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dd-toggle">Menú <span class="arrow">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="productos.html#cafes">☕ Cafés</a></li>
+                        <li><a href="productos.html#postres">🍰 Postres</a></li>
+                        <li><a href="promos.html">Promociones</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dd-toggle">Nosotros <span class="arrow">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="local.html">Nuestro Local</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="resenas.html">Reseñas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dd-toggle">Información <span class="arrow">▾</span></a>
+                    <ul class="submenu">
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a href="informacion.html">Información General</a></li>
+                        <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    </ul>
+                </li>
+                <li><a href="pedidos.html" class="active">🚚 Pedidos y Entregas</a></li>
+                <li><a href="contacto.html" class="nav-contact">📞 Contáctanos</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="pedidos" class="page-section section">
+            <h2 class="title">Pedidos y Entregas</h2>
+
+            <div class="info-content">
+                <div class="info-card">
+                    <h3>📝 Cómo pedir</h3>
+                    <ol class="plain-list">
+                        <li>Agrega tus productos con <strong>Agregar al pedido</strong>.</li>
+                        <li>Abre <strong>Mi pedido</strong> y revisa el total.</li>
+                        <li>Envíalo por <strong>WhatsApp</strong> e indica tu dirección.</li>
+                        <li>Te confirmamos el monto final y la hora de entrega.</li>
+                    </ol>
+                </div>
+                <div class="info-card">
+                    <h3>🚚 Zonas de cobertura</h3>
+                    <ul class="plain-list">
+                        <li><strong>Zona 1:</strong> Colonia Escalón, San Benito y Centro</li>
+                        <li><strong>Zona 2:</strong> Santa Tecla y Antiguo Cuscatlán</li>
+                        <li><strong>Zona 3:</strong> Soyapango, Mejicanos e Ilopango</li>
+                    </ul>
+                    <p class="map-sub">¿Tu zona no aparece? Escríbenos y revisamos si podemos llegar.</p>
+                </div>
+                <div class="info-card">
+                    <h3>⏱️ Tiempo aproximado</h3>
+                    <ul class="plain-list">
+                        <li>Zona 1: 25 a 35 minutos</li>
+                        <li>Zona 2: 35 a 50 minutos</li>
+                        <li>Zona 3: 45 a 60 minutos</li>
+                    </ul>
+                    <p class="map-sub">Puede variar en horas de mucho tráfico o alta demanda.</p>
+                </div>
+            </div>
+
+            <h3 class="subtitle">Costo de envío</h3>
+            <div class="table-wrap">
+                <table class="rates">
+                    <thead><tr><th>Zona</th><th>Costo de envío</th><th>Pedido mínimo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Zona 1</td><td>$1.50</td><td>$5.00</td></tr>
+                        <tr><td>Zona 2</td><td>$2.50</td><td>$8.00</td></tr>
+                        <tr><td>Zona 3</td><td>$3.50</td><td>$10.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-content" style="margin-top:30px;">
+                <div class="info-card">
+                    <h3>💳 Métodos de pago</h3>
+                    <ul class="plain-list">
+                        <li>Efectivo al recibir (indica con cuánto pagas para llevar cambio)</li>
+                        <li>Tarjeta de crédito o débito en el local</li>
+                        <li>Transferencia bancaria (envía el comprobante por WhatsApp)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>↩️ Política de cancelación</h3>
+                    <ul class="plain-list">
+                        <li>Puedes cancelar sin costo antes de que empecemos a prepararlo.</li>
+                        <li>Si ya está en preparación, no se puede cancelar ni reembolsar.</li>
+                        <li>Si hay un error de nuestra parte, lo reponemos o reembolsamos.</li>
+                    </ul>
+                    <p class="map-sub">Para cancelar, escríbenos de inmediato por WhatsApp.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de Página -->
+        <footer>
+            <p>Derechos reservados - Isaac Vasquez & David Lara</p>
+        </footer>
+
+    </main>
+
+    <!-- Carrito -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-panel" id="cart-panel" aria-label="Carrito de pedido">
+        <div class="cart-head">
+            <h3>🛒 Mi pedido</h3>
+            <button class="cart-close" id="cart-close" aria-label="Cerrar">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-foot">
+            <div class="checkout-form" id="checkout-form">
+                <input type="text" id="co-nombre" placeholder="Nombre y apellido *" autocomplete="name">
+                <input type="tel" id="co-telefono" placeholder="Teléfono *" autocomplete="tel">
+                <input type="email" id="co-correo" placeholder="Correo (opcional)" autocomplete="email">
+                <input type="text" id="co-direccion" placeholder="Dirección de entrega *" autocomplete="street-address">
+                <select id="co-pago" aria-label="Método de pago"><option>Efectivo</option><option>Tarjeta</option><option>Transferencia</option></select>
+                <input type="text" id="co-notas" placeholder="Notas del pedido (opcional)" maxlength="120">
+            </div>
+            <div class="cart-total"><span>Total</span><span id="cart-total">$0.00</span></div>
+            <button class="btn" id="checkout-btn">Confirmar pedido</button>
+            <a href="pedidos.html" class="cart-link">Ver zonas, costos de envío y pago</a>
+            <button class="clear" id="clear-btn">Vaciar pedido</button>
+        </div>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/config.js?v=4"></script>
+    <script src="js/main.js?v=4"></script>
+</body>
+</html>

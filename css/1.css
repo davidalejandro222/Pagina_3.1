@@ -148,6 +148,8 @@ body {
     background: rgba(94, 58, 39, 0.98);
     border-right: 2px solid var(--border);
     padding-top: 100px;
+    padding-bottom: 30px;
+    overflow-y: auto;
     z-index: 1000;
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
@@ -198,7 +200,11 @@ body {
 
 .nav-links a.nav-contact:hover { padding-left: 12px; background: var(--gold); color: #3a1f12; }
 
-.dropdown:hover .submenu { display: block; }
+.dd-toggle { display: flex !important; justify-content: space-between; align-items: center; }
+.dd-toggle .arrow { transition: transform 0.3s ease; }
+.dropdown.open > .dd-toggle .arrow { transform: rotate(180deg); }
+.dropdown.open > .submenu { display: block; }
+.submenu a.active { color: var(--gold); font-weight: 600; }
 
 .submenu {
     display: none;
@@ -745,3 +751,110 @@ footer {
     .info-card.info-map { grid-template-columns: 1fr; }
     .map-frame { height: 260px; }
 }
+
+/* Pedidos y entregas */
+.plain-list { list-style: none; margin-top: 8px; }
+ol.plain-list { list-style: decimal; padding-left: 20px; }
+.plain-list li { color: var(--muted); font-size: 0.92rem; margin-bottom: 8px; line-height: 1.5; }
+.plain-list strong { color: #fff; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+.rates { width: 100%; border-collapse: collapse; min-width: 420px; }
+.rates th { background: var(--card); color: var(--gold); text-align: left; padding: 14px 18px; }
+.rates td { padding: 14px 18px; border-top: 1px solid var(--border); color: var(--muted); }
+.rates tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.04); }
+.cart-link { display: block; text-align: center; color: var(--gold); font-size: 0.85rem; margin-top: 10px; }
+
+body.menu-open { overflow: hidden; }
+
+/* Refuerzo móvil */
+@media (hover: none) {
+    .card:hover, .gallery-grid img:hover, .btn:hover { transform: none; }
+}
+
+@media (max-width: 1024px) {
+    .nav-links a { padding: 18px 25px; font-size: 1.05rem; }
+    .submenu a { padding: 16px 10px 16px 40px; }
+    .header-btn, .add-btn, .btn, .carousel-btn, .qty button { min-height: 44px; }
+    .qty button { min-width: 44px; }
+    .hamburger-btn { width: 44px; height: 44px; padding: 11px 7px; }
+    .hamburger-btn.open span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+}
+
+@media (max-width: 600px) {
+    .section { padding: 50px 5%; }
+    .top-header { height: 76px; padding: 0 12px; gap: 8px; }
+    .main-content { margin-top: 76px; }
+    .logo-img { width: 56px; height: 52px; }
+    .header-btn { padding: 10px 14px; }
+    .hero { height: auto; min-height: 70vh; padding: 60px 5%; }
+    .hero-content p { font-size: 1rem; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+    .grid-cards { grid-template-columns: 1fr; gap: 22px; }
+    .horario-box { min-width: 100%; padding: 24px; }
+    .info-content { grid-template-columns: 1fr; }
+    .contact-info, .contact-form { padding: 20px; }
+    .contact-form input, .contact-form textarea, .options select { font-size: 16px; min-height: 44px; }
+    .cart-panel { width: 100%; }
+    .carousel-slide img { height: 240px; }
+    .map-frame { height: 240px; }
+    .subtitle { font-size: 1.3rem; }
+}
+
+@media (max-width: 360px) {
+    .header-btn .cart-count { min-width: 20px; height: 20px; }
+    .hero-content h1 { font-size: 1.7rem; }
+}
+
+/* Formulario de confirmación de pedido */
+.cart-foot { max-height: 70vh; overflow-y: auto; }
+.checkout-form { display: grid; gap: 8px; margin-bottom: 14px; }
+.checkout-form input, .checkout-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: #fff;
+    font-size: 0.9rem;
+}
+.checkout-form input::placeholder { color: var(--muted); opacity: 0.8; }
+.add-btn:disabled, .btn:disabled { opacity: 0.6; cursor: wait; }
+@media (max-width: 600px) { .checkout-form input, .checkout-form select { font-size: 16px; min-height: 44px; } }
+
+/* Carrito: más espacio para la lista y formulario más compacto */
+.cart-items {
+    min-height: 32vh;
+    padding: 18px 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+
+.cart-foot {
+    max-height: 52vh;
+    background: var(--bg);
+    border-top: 2px solid var(--border);
+    box-shadow: 0 -8px 18px rgba(0, 0, 0, 0.25);
+    padding: 16px 20px 18px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+
+.checkout-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.checkout-form::before {
+    content: "Datos de entrega";
+    grid-column: 1 / -1;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+#co-direccion, #co-notas { grid-column: 1 / -1; }
+
+.checkout-form input, .checkout-form select { background: var(--bg-alt); }
+
+.cart-total { margin-bottom: 10px; }

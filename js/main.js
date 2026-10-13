@@ -7,17 +7,48 @@ function toggleMenu() {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
     hamburgerBtn.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
 }
 hamburgerBtn.addEventListener('click', toggleMenu);
 overlay.addEventListener('click', toggleMenu);
-document.querySelectorAll('.sidebar a').forEach(link => {
+document.querySelectorAll('.sidebar a:not(.dd-toggle)').forEach(link => {
     link.addEventListener('click', () => {
         if (sidebar.classList.contains('active')) toggleMenu();
     });
 });
 
+/* Submenús tipo acordeón (funcionan con toque en celular) */
+document.querySelectorAll('.dd-toggle').forEach(t => {
+    t.addEventListener('click', e => {
+        e.preventDefault();
+        t.parentElement.classList.toggle('open');
+    });
+});
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        if (sidebar.classList.contains('active')) toggleMenu();
+        if (cartPanel.classList.contains('active')) closeCart();
+    }
+});
+
+/* ---------- Datos del negocio (desde js/config.js) ---------- */
+document.querySelectorAll('[data-cc]').forEach(el => {
+    const v = CUPCRAFT[el.dataset.cc];
+    if (v) el.textContent = v;
+});
+document.querySelectorAll('[data-cc-href]').forEach(el => {
+    const k = el.dataset.ccHref;
+    if (k === 'tel') el.href = 'tel:' + CUPCRAFT.telefono.replace(/[^+\d]/g, '');
+    if (k === 'mail') el.href = 'mailto:' + CUPCRAFT.correo;
+    if (k === 'wa') el.href = 'https://wa.me/' + CUPCRAFT.whatsapp;
+    if (k === 'maplink') el.href = 'https://www.google.com/maps?q=' + encodeURIComponent(CUPCRAFT.mapa);
+});
+document.querySelectorAll('[data-cc-map]').forEach(el => {
+    el.src = 'https://www.google.com/maps?q=' + encodeURIComponent(CUPCRAFT.mapa) + '&z=15&output=embed';
+});
+
 /* ---------- Carrito (compartido entre páginas con localStorage) ---------- */
-const WHATSAPP = '50312345678'; // cambia por el número real
+const WHATSAPP = CUPCRAFT.whatsapp; // se cambia en js/config.js
 let cart = [];
 try { cart = JSON.parse(localStorage.getItem('cupcraft_cart')) || []; } catch (e) { cart = []; }
 
@@ -30,7 +61,7 @@ const toastEl = document.getElementById('toast');
 
 const money = n => '$' + n.toFixed(2);
 function saveCart() { try { localStorage.setItem('cupcraft_cart', JSON.stringify(cart)); } catch (e) {} }
-function openCart() { cartPanel.classList.add('active'); cartOverlay.classList.add('active'); }
+function openCart() { renderCart(); cartPanel.classList.add('active'); cartOverlay.classList.add('active'); }
 function closeCart() { cartPanel.classList.remove('active'); cartOverlay.classList.remove('active'); }
 
 function showToast(text) {
@@ -102,12 +133,81 @@ document.getElementById('cart-close').addEventListener('click', closeCart);
 cartOverlay.addEventListener('click', closeCart);
 document.getElementById('clear-btn').addEventListener('click', () => { cart = []; renderCart(); });
 
-document.getElementById('checkout-btn').addEventListener('click', () => {
-    if (cart.length === 0) { showToast('Tu pedido está vacío'); return; }
-    const lines = cart.map(it => `• ${it.qty}x ${it.name}${it.note ? ' (' + it.note + ')' : ''} - ${money(it.price * it.qty)}`);
+/* ---------- Confirmar pedido (API en Python + WhatsApp) ---------- */
+const API = (CUPCRAFT.api || '').replace(/\/$/, '');
+const CAMPOS = { nombre: 'co-nombre', telefono: 'co-telefono', correo: 'co-correo', direccion: 'co-direccion', pago: 'co-pago', notas: 'co-notas' };
+const esc = s => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+
+function leerDatos() {
+    const d = {};
+    for (const k in CAMPOS) d[k] = (document.getElementById(CAMPOS[k]) || {}).value?.trim() || '';
+    return d;
+}
+// Recordar los datos del cliente para el próximo pedido
+try {
+    const guardados = JSON.parse(localStorage.getItem('cupcraft_cliente')) || {};
+    for (const k in CAMPOS) {
+        const el = document.getElementById(CAMPOS[k]);
+        if (el && guardados[k]) el.value = guardados[k];
+    }
+} catch (e) {}
+
+function urlWhatsApp(idPedido, d) {
+    const lineas = cart.map(it => `• ${it.qty}x ${it.name}${it.note ? ' (' + it.note + ')' : ''} - ${money(it.price * it.qty)}`);
     const total = cart.reduce((s, it) => s + it.price * it.qty, 0);
-    const msg = `Hola Cupcraft, quiero hacer este pedido:\n${lines.join('\n')}\n\nTotal: ${money(total)}`;
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+    let msg = `Hola Cupcraft, quiero hacer este pedido${idPedido ? ' (#' + idPedido + ')' : ''}:\n${lineas.join('\n')}\n\nTotal: ${money(total)}`;
+    msg += `\n\nNombre: ${d.nombre}\nTeléfono: ${d.telefono}\nDirección: ${d.direccion}\nPago: ${d.pago}`;
+    if (d.notas) msg += `\nNotas: ${d.notas}`;
+    return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+}
+
+function mostrarResultado(ok, idPedido, wa, detalle) {
+    cartItemsEl.innerHTML = `
+        <div class="cart-item" style="text-align:center;">
+            <div class="name" style="font-size:1.1rem;">${ok ? '✔ ¡Pedido registrado!' : '⚠ No se pudo registrar en el sistema'}</div>
+            ${ok ? `<p class="note" style="margin:8px 0;">Número de pedido: #${idPedido}</p>` : `<p class="note" style="margin:8px 0;">${esc(detalle || '')}</p>`}
+            <p style="font-size:0.85rem;margin:8px 0 14px;">${ok ? 'Avísanos por WhatsApp para confirmar tu entrega.' : 'Envíalo por WhatsApp y lo atendemos igual.'}</p>
+            <a class="btn" href="${wa}" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        </div>`;
+}
+
+document.getElementById('checkout-btn').addEventListener('click', async () => {
+    if (cart.length === 0) { showToast('Tu pedido está vacío'); return; }
+    const d = leerDatos();
+    if (!d.nombre || !d.telefono || !d.direccion) { showToast('Completa nombre, teléfono y dirección'); return; }
+    try { localStorage.setItem('cupcraft_cliente', JSON.stringify(d)); } catch (e) {}
+
+    // Sin API configurada: solo WhatsApp
+    if (!API) { window.open(urlWhatsApp(null, d), '_blank'); return; }
+
+    const btn = document.getElementById('checkout-btn');
+    const textoOriginal = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    const wa = urlWhatsApp(null, d);
+    try {
+        const res = await fetch(API + '/api/pedidos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
+            body: JSON.stringify({
+                cliente: d,
+                items: cart.map(it => ({ nombre: it.name, precio: it.price, cantidad: it.qty, nota: it.note }))
+            })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Error del servidor');
+        const waOk = urlWhatsApp(data.id_pedido, d);
+        mostrarResultado(true, data.id_pedido, waOk);
+        cart = [];
+        saveCart();
+        cartCountEl.textContent = 0;
+        cartTotalEl.textContent = money(0);
+    } catch (e) {
+        mostrarResultado(false, null, wa, 'Intenta de nuevo o usa WhatsApp.');
+    } finally {
+        btn.disabled = false;
+        btn.textContent = textoOriginal;
+    }
 });
 
 renderCart();
